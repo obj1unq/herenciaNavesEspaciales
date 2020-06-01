@@ -10,6 +10,14 @@ class NaveDeCarga {
 	method recibirAmenaza() {
 		carga = 0
 	}
+	
+	method enFalta() = self.sobrecargada() and self.excedidaDeVelocidad()
+	
+	method acercamientoDeControl() {
+		if (self.enFalta()) {
+			self.recibirAmenaza()
+		}
+	}
 
 }
 
