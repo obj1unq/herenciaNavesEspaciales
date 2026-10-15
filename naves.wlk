@@ -1,6 +1,6 @@
 class NaveDeCarga {
 
-	var velocidad = 0
+	var property velocidad = 0
 	var property carga = 0
 
 	method sobrecargada() = carga > 100000
@@ -23,15 +23,15 @@ class NaveDeCarga {
 
 class NaveDePasajeros {
 
-	var velocidad = 0
+	var property velocidad = 0
 	var property alarma = false
 	const cantidadDePasajeros = 0
 
 	method tripulacion() = cantidadDePasajeros + 4
 
-	method velocidadMaximaLegal() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
+	method velocidadMaximaPermitida() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
 
-	method estaEnPeligro() = velocidad > self.velocidadMaximaLegal() or alarma
+	method estaEnPeligro() = velocidad > self.velocidadMaximaPermitida() or alarma
 
 	method recibirAmenaza() {
 		alarma = true
@@ -77,4 +77,3 @@ object ataque {
 	}
 
 }
-

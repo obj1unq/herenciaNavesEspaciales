@@ -45,11 +45,11 @@ describe "Nave de pasajeros" {
 	const naveConPasajeros = new NaveDePasajeros(cantidadDePasajeros = 296, velocidad = 290000)
 
 	test "velocidad maxima sin pasajeros" {
-		assert.equals(75000, naveSinPasajeros.velocidadMaximaLegal())
+		assert.equals(75000, naveSinPasajeros.velocidadMaximaPermitida())
 	}
 
 	test "velocidad maxima con pasajeros" {
-		assert.equals(1000 - 200, naveConPasajeros.velocidadMaximaLegal())
+		assert.equals(1000 - 200, naveConPasajeros.velocidadMaximaPermitida())
 	}
 
 	test "esta en peligro" {
@@ -95,4 +95,3 @@ describe "Nave de combate" {
 		assert.equals("Enemigo encontrado", naveEnAtaque.ultimoMensaje())
 	}
 }
-
